@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "app/proto";
+
+message Req {
+	int64 id = 1;
+}
+
+message Res {
+	string result = 1;
+}
+
+service Airport {
+	rpc Status(stream Req) returns (stream Res) {}
+}
+
